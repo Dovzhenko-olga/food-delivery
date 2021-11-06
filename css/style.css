@@ -831,6 +831,11 @@ button {
 .alert {
   position: relative;
   z-index: 1000;
-  background-color: rgb(245, 191, 191);
+  background: repeating-linear-gradient(
+    -45deg,
+    rgb(236, 195, 195) 0 10px,
+    rgb(221, 178, 178) 10px 20px
+  );
+  /* rgb(245, 191, 191); */
   border-radius: 3px;
 }
