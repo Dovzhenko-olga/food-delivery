@@ -48,12 +48,16 @@ logInForm.addEventListener('submit', (e) => {
     password: inputPassword.value,
   }
 
-  // if (!(user.login || user.password)) {
+  if (user.login.trim() === '' || user.password.trim() === '') {
 
-  //   inputLogin.style.borderColor = 'red';
-  //   inputLogin.placeholder = 'Enter login';
-  //   return;
-  // }
+    new PNotify({
+      text: 'Enter login and password!',
+      type: 'error',
+      shadow: true,
+      delay: 2000,
+    });
+    return;
+  }
 
   localStorage.setItem('user', JSON.stringify(user));
   login(user);
