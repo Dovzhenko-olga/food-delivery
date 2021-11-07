@@ -7,13 +7,13 @@ const renderItems = (data) => {
 
     const { name, time_of_delivery, stars, price, kitchen, image, products } = item;
 
-    const card = document.createElement('a');
-    card.setAttribute('href', 'restaurant.html');
-    card.classList.add('card');
-    card.classList.add('card-restaurant');
-    card.dataset.products = products;
+    const link = document.createElement('a');
+    link.setAttribute('href', 'restaurant.html');
+    link.classList.add('card');
+    link.classList.add('card-restaurant');
+    link.dataset.products = products;
 
-    card.innerHTML = `
+    link.innerHTML = `
     <img src="${image}" alt="${name}" class="card-image" />
 			<div class="card-text">
 				<div class="card-heading">
@@ -29,7 +29,9 @@ const renderItems = (data) => {
 				</div>
 			</div>
     `
-    card.addEventListener('click', (e) => {
+
+    console.log(window);
+    link.addEventListener('click', (e) => {
       e.preventDefault();
       if (!localStorage.getItem('user')) {
         modalAuth.style.display = 'flex';
@@ -38,10 +40,10 @@ const renderItems = (data) => {
 
       localStorage.setItem('restaurant', JSON.stringify(item));
 
-      window.location.href = 'restaurant.html';
+      window.location.pathname = '/restaurant.html';
     });
 
-    cardsResaurants.append(card);
+    cardsResaurants.append(link);
   })
 }
 

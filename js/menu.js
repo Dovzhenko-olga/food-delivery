@@ -39,6 +39,7 @@ const renderItems = (data) => {
     `
     cardsMenu.append(card);
   })
+
 }
 
 const storage = localStorage.getItem('restaurant');
@@ -54,5 +55,5 @@ if (storage) {
       console.log(error.message);
     });
 } else {
-  window.location.href = '/';
+  window.location.pathname = '/';
 };
