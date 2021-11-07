@@ -55,5 +55,5 @@ if (storage) {
       console.log(error.message);
     });
 } else {
-  window.location.pathname = '/';
+  window.location.href = 'index.html';
 };

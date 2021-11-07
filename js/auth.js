@@ -46,7 +46,7 @@ const logout = () => {
   userName.textContent = '';
 
   localStorage.removeItem('user');
-  window.location.pathname = '/';
+  window.location.href = 'index.html';
 };
 
 
