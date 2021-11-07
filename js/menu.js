@@ -55,5 +55,5 @@ if (storage) {
       console.log(error.message);
     });
 } else {
-  window.location.href = 'index.html';
+  window.location.href = '/';
 };
