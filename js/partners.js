@@ -1,4 +1,4 @@
-const cardsResaurants = document.querySelector('.cards-restaurants');
+const cardsRestaurants = document.querySelector('.cards-restaurants');
 
 const BASE_URL = 'https://delivery-9561e-default-rtdb.firebaseio.com/db/';
 
@@ -30,7 +30,6 @@ const renderItems = (data) => {
 			</div>
     `
 
-    console.log(window);
     link.addEventListener('click', (e) => {
       e.preventDefault();
       if (!localStorage.getItem('user')) {
@@ -40,10 +39,10 @@ const renderItems = (data) => {
 
       localStorage.setItem('restaurant', JSON.stringify(item));
 
-      window.location.pathname = '/restaurant.html';
+      window.location.href = 'restaurant.html';
     });
 
-    cardsResaurants.append(link);
+    cardsRestaurants.append(link);
   })
 }
 
