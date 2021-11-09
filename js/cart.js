@@ -46,6 +46,9 @@ const decrementCount = (id) => {
 
 const renderCartItems = (data) => {
   modalBody.innerHTML = '';
+
+  let priceTag = 0;
+
   data.forEach(({ name, price, id, count }) => {
 
     const newItem = document.createElement('div');
@@ -61,10 +64,10 @@ const renderCartItems = (data) => {
     	<button class="counter-button btn-inc" data-index="${id}">+</button>
     </div>
     `
+    priceTag = data.reduce((acc, current) => acc + current.price * current.count, 0);
 
     modalBody.append(newItem);
   })
-  const priceTag = data.reduce((acc, current) => acc + current.price, 0);
 
   modalPrice.textContent = `${priceTag} ₽`;
 }
